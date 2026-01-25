@@ -1,108 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MY KACT</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      background: #f4f4f4;
-    }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #34495e;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 30px;
-      background: white;
-      margin: 20px;
-      border-radius: 5px;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-  </style>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People Association</title>
 
-<header>
-  <h1>MY KACT</h1>
-  <p>KERALA ASSOCIATION OF CONNECTICUT </p>
-</header>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+  }
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About Us</a>
-  <a href="#team">Our Team</a>
-  <a href="#Constitution">Constitution</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#Election">Election</a>
-  <a href="#events">Events</a>
-  <a href="#contact">Contact Us</a>
-  <a href="#join">Join Us</a>
-  <a href="#login">Login</a>
-</nav>
+  header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    The People Association is a community organization dedicated to supporting,
-    empowering, and uniting people around shared values and goals.
-  </p>
-</section>
-  <section id="home">
-  <h2>Home</h2>
-  <p>
-    The People Association is a community organization dedicated to supporting,
-    empowering, and uniting people around shared values and goals.
-  </p>
-</section>
+  header img {
+    height: 50px;
+  }
 
-<section id="activities">
-  <h2>Our Activities</h2>
-  <ul>
-    <li>Community support programs</li>
-    <li>Educational workshops</li>
-    <li>Volunteer initiatives</li>
-    <li>Public events and meetings</li>
-  </ul>
-</section>
+  /* Tabs */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background: #34495e;
+  }
 
-<section id="join">
-  <h2>Join the Association</h2>
-  <p>
-    We welcome new members who want to make a positive impact.
-    Contact us to learn how to join or volunteer.
-  </p>
-</section>
+  .tabs button {
+    flex: 1;
+    min-width: 120px;
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 15px;
+  }
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: peopleassociation@email.com</p>
-  <p>Phone: +123 456 789</p>
-</section>
+  .tabs button.active {
+    background: #1abc9c;
+  }
 
-<footer>
-  <p>&copy; 2026 People Association. All rights reserved.</p>
-</footer>
+  /* Content */
+  .content {
+    display: none;
+    padding: 20px;
+    background: white;
+    margin: 15px;
+    border-radius: 5px;
+  }
 
-</body>
-</html>
+  .content.active {
+    display: block;
+  }
+
+  .content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+
+  .event {
+    border-left: 4px solid #1abc9c;
+    padding-left: 12px;
+    margin-bottom: 15px;
+  }
+
+  .downloads a {
+    display: block;
+    padding: 12px;
+    margi
