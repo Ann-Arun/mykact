@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Gallery</h2>
+    <div class="gallery" id="gallery"></div>
+</div>
+
+<script>
+let images = JSON.parse(localStorage.getItem("gallery")) || [];
+images.forEach(img => {
+    gallery.innerHTML += `<img src="${img}">`;
+});
+</script>
