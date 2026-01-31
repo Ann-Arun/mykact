@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Member Registration</h2>
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <input id="phone" placeholder="Phone">
+    <button onclick="register()">Register</button>
+</div>
+
+<script>
+function register() {
+    let members = JSON.parse(localStorage.getItem("members")) || [];
+    members.push({name: name.value, email: email.value, phone: phone.value});
+    localStorage.setItem("members", JSON.stringify(members));
+    alert("Registered successfully!");
+}
+</script>
