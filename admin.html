@@ -1,1 +1,70 @@
+<div class="container">
+    <h2>Admin Panel</h2>
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="login()">Login</button>
+
+    <div id="admin" style="display:none;">
+
+        <h3>Edit Home Content</h3>
+        <textarea id="homeText"></textarea>
+        <button onclick="saveHome()">Save</button>
+
+        <h3>Post News</h3>
+        <input id="newsTitle" placeholder="Title">
+        <textarea id="newsBody"></textarea>
+        <button onclick="addNews()">Publish</button>
+
+        <h3>Upload Gallery Image</h3>
+        <input type="file" id="img">
+        <button onclick="uploadImage()">Upload</button>
+
+        <h3>View Members</h3>
+        <button onclick="viewMembers()">Show Members</button>
+        <div id="members"></div>
+
+    </div>
+</div>
+
+<script>
+const PASSWORD = "admin123";
+
+function login() {
+    if (pass.value === PASSWORD) admin.style.display = "block";
+    else alert("Wrong password");
+}
+
+function saveHome() {
+    localStorage.setItem("homeContent", homeText.value);
+    alert("Saved");
+}
+
+function addNews() {
+    let news = JSON.parse(localStorage.getItem("news")) || [];
+    news.push({
+        title: newsTitle.value,
+        body: newsBody.value,
+        date: new Date().toDateString()
+    });
+    localStorage.setItem("news", JSON.stringify(news));
+    alert("News added");
+}
+
+function uploadImage() {
+    let reader = new FileReader();
+    reader.onload = () => {
+        let imgs = JSON.parse(localStorage.getItem("gallery")) || [];
+        imgs.push(reader.result);
+        localStorage.setItem("gallery", JSON.stringify(imgs));
+        alert("Uploaded");
+    };
+    reader.readAsDataURL(img.files[0]);
+}
+
+function viewMembers() {
+    let m = JSON.parse(localStorage.getItem("members")) || [];
+    members.innerHTML = m.map(x =>
+        `<p>${x.name} | ${x.email} | ${x.phone}</p>`
+    ).join("");
+}
+</script>
 
