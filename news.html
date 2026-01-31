@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Latest News</h2>
+    <div id="newsList"></div>
+</div>
+
+<script>
+let news = JSON.parse(localStorage.getItem("news")) || [];
+news.reverse().forEach(n => {
+    newsList.innerHTML += `
+        <h3>${n.title}</h3>
+        <small>${n.date}</small>
+        <p>${n.body}</p><hr>
+    `;
+});
+</script>
